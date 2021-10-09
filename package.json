@@ -15,10 +15,23 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "axios": "^0.22.0",
+    "bulma": "^0.9.3",
     "gatsby": "^3.11.1",
     "gatsby-plugin-sass": "^4.11.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-remark": "^4.11.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.37.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

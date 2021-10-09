@@ -1,0 +1,34 @@
+import React from 'react';
+import Layout from '../components/Layout';
+import { Link, graphql } from 'gatsby';
+
+const TestingPage = ({data}) => {
+  const posts = data.allPost.nodes;
+  return (
+    <Layout>
+      <h1>Testing page</h1>
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>
+            <Link to={`/post/${post.id}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  )
+}
+
+
+// export const query = graphql`
+// query {
+//   allPost {
+//     nodes {
+//       id
+//       title
+//       body
+//     }
+//   }
+// }
+// `
+
+// export default TestingPage;
