@@ -1,22 +1,16 @@
-const axios = require('axios');
 const {createFilePath} = require('gatsby-source-filesystem');
 
+/* ###############################################
+INIT CREATE PAGES FOR THE MARKDOWNS.
+""""""""""""""""""""""""""""""""""""""""""""""""*/
 exports.createPages = async function ({actions, graphql}) {
-
-  // Data querying: unstructurized.
-  // const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  // const posts = res.data;
-
-  /* ###############################################
-  CREATE PAGES FOR THE MARKDOWNS.
-   """"""""""""""""""""""""""""""""""""""""""""""""*/
 
   // Data querying: with Graphql.
   const result = await graphql(`
     query {
       allMarkdownRemark {
         nodes {
-          fields {
+          frontmatter {
             slug
           }
         }
@@ -24,126 +18,41 @@ exports.createPages = async function ({actions, graphql}) {
     }
   `)
 
-  const { nodes } = result.data.allMarkdownRemark;
+  const {nodes} = result.data.allMarkdownRemark;
+
+  const paginationItems = 2;
+
+  const numberOfPages = Math.ceil(nodes.length / paginationItems);
+
+  Array.from({length: numberOfPages}).forEach((_, i) => {
+
+    // Paginarion.
+    const pageNumber = i + 1;
+    // Create the pagination page.
+    actions.createPage({
+      path: pageNumber === 1 ? `/blogs` : `/blogs/${pageNumber}`,
+      component: require.resolve(`./src/templates/pagination.template.jsx`),
+      context: {
+        skip: i * paginationItems,
+        limit: paginationItems,
+        currentPage: pageNumber,
+        numberOfPages
+      }
+    });
+
+  });
 
   nodes.forEach(node => {
     actions.createPage({
-      path: node.fields.slug,
-      component: require.resolve(`./src/templates/blog.jsx`),
+      path: `/posts/${node.frontmatter.slug}`,
+      component: require.resolve(`./src/templates/post.template.jsx`),
       context: {
-        slug: node.fields.slug
+        slug: node.frontmatter.slug
       }
     })
   });
-   /*""""""""""""""""""""""""""""""""""""""""""""""""
-   ############################################### */
-
-  // create post
-  // posts.forEach(post => {
-  //   actions.createPage({
-  //     path: `/post/${post.id}`,
-  //     component: require.resolve(`./src/templates/post.jsx`),
-  //     context: {post}
-  //   })
-  // })
-
-  // create posts
-  // actions.createPage({
-  //   path: '/posts',
-  //   component: require.resolve(`./src/templates/posts.jsx`),
-  //   context: {posts: posts, body: "this is the body"}
-  // })
-
-} // *END* pageCreating.
-
-// Registering nodes
-exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
-
-  // Data querying.
-  // const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  // const posts = res.data;
-
-  //posts.forEach(post => {
-  //  const node = {
-  //    title: post.title,
-  //    body: post.body,
-  //    // id must be globally unique.
-  //    id: createNodeId(`Post-${post.id}`),
-  //    // id of the parent Node.
-  //    parent: null,
-  //    // list of children Nodes' ids.
-  //    children: [],
-  //    //
-  //    internal: {
-  //      // unique node type.
-  //      type: 'Post',
-  //      // a hash or short digital summary of the node.
-  //      contentDigest: createContentDigest(post),
-  //      // raw content of this node.
-  //      content: JSON.stringify(post)
-  //    }
-  //  };
-  //  actions.createNode(node);
-  //})
 
 }
-
-
-// exports.createSchemaCustomization = ({actions}) => {
-//   const typeDefs = `
-//     type PostJson {
-//         title: String
-//         body: String
-//         id: ID
-//     }
-//     input TitleFilter {
-//         eq: String
-//         in: String
-//     }
-//     `
-//   actions.createTypes(typeDefs);
-// }
-
-// exports.createResolvers = ({createResolvers}) => {
-//   const resolvers = {
-//     Query: {
-//       allPost: {
-//         type: ["PostJson"],
-//         args: {
-//           filter: `input PostFilterInput { title: TitleFilter }`,
-//           limit: 'Int'
-//         },
-//         async resolve(source, args, context, info) {
-//           const {filter} = args;
-//           const {title} = filter || {};
-//           const {eq} = title || {};
-
-//           const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-//           const posts = res.data;
-
-//           if (eq) {
-//             return posts.filter(post => (post.title === eq))
-//           }
-//           return posts;
-//         }
-//       }
-//     }
-//   }
-//   createResolvers(resolvers);
-// };
-
-
-// Constructing slug.
-exports.onCreateNode = ({node, getNode, actions}) => {
-  // Check for the markdown node.
-  if (node.internal.type === 'MarkdownRemark') {
-    // adding `basePath` will remove `posts/` from the slug.
-    const slug = createFilePath({node, getNode});
-    // add a field to the node.
-    actions.createNodeField({
-      node,
-      name: 'slug',
-      value: slug
-    })
-  }
-};
+/*""""""""""""""""""""""""""""""""""""""""""""""""
+END pageCreating.
+############################################### */
