@@ -1,27 +1,31 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+const Copyright = () => {
+  return (
+    <footer>
+      {'Copyright © '}
+      <Link color="inherit" to="/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </footer>
+  );
+};
+
 const Footer = () => {
-    return (
-        <footer className="footer">
-            <div className="content has-text-centered">
-                <p>
-                    <strong>
-                        Bulma
-                    </strong>
-                    by
-                    <Link href="https://jgthms.com">
-                        Jeremy Thomas</Link>.
-                    The source code is licensed
-                    <Link to="http://opensource.org/licenses/mit-license.php">
-                        MIT
-                    </Link>.
-                    The website content
-                    is licensed <Link href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</Link>.
-                </p>
-            </div>
-        </footer>
-    )
-}
+  return (
+    <footer>
+      <div className="p-5">
+        <nav className="level">
+          <div className="level-item has-text-centered">
+            <Copyright />
+          </div>
+        </nav>
+      </div>
+    </footer>
+  )
+};
 
 export default Footer;
