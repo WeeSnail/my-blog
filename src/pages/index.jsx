@@ -9,6 +9,7 @@ import {graphql} from 'gatsby';
 const IndexPage = ({data}) => {
   return (
     <Layout>
+
     <Seo title={`Home`} description={`welcome to my blog`} />
 
     { /* Show two featured posts.*/ }
@@ -20,6 +21,7 @@ const IndexPage = ({data}) => {
         ))}
       </div>
 
+    { /* List of posts*/ }
       <div className="p-4">
         <PostListing posts={data.allMarkdownRemark.nodes} />
       </div>

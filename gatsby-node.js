@@ -42,6 +42,7 @@ exports.createPages = async function ({actions, graphql}) {
 
   });
 
+  // Create posts' pages.
   nodes.forEach(node => {
     actions.createPage({
       path: `/posts/${node.frontmatter.slug}`,

@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import {graphql} from 'gatsby';
 import './post.template.scss';
 
-const PostTemplate = ({ data, pageContext }) => {
+const PostTemplate = ({data, pageContext}) => {
+  const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
+    <Seo title={frontmatter.title} description={frontmatter.subtitle}/>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
       <div
         className="post-content"
@@ -21,6 +24,7 @@ query($slug: String) {
     html
     frontmatter {
       title
+      subtitle
     }
     }
   }
