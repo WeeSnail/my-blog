@@ -21,6 +21,7 @@ const Footer = () => {
         <nav className="level">
           <div className="level-item has-text-centered">
             <Copyright />
+            <a href="/rss.xml" target="_blank">RSS</a>
           </div>
         </nav>
       </div>
