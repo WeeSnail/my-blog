@@ -8,7 +8,7 @@ const PostTemplate = ({data, pageContext}) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-    <Seo title={frontmatter.title} description={frontmatter.subtitle}/>
+    <Seo title={frontmatter.title} description={frontmatter.subtitle} coverImage={frontmatter.coverImage}/>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
       <div
         className="post-content"
@@ -25,6 +25,7 @@ query($slug: String) {
     frontmatter {
       title
       subtitle
+      coverImage
     }
     }
   }
