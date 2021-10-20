@@ -22,6 +22,7 @@ module.exports = {
             resolve: `gatsby-plugin-manifest`,
             options: manifestOptions,
         },
+        `gatsby-plugin-offline`,
         {
             resolve: `gatsby-plugin-feed`,
             options: rssOptions
