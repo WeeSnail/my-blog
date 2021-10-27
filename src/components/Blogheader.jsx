@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import ToggleMode from './Themer';
+import ToggleMode from './ThemeToggle';
 
 const Blogheader = () => (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -52,13 +52,13 @@ const Blogheader = () => (
             <div className="navbar-end">
                 <div className="navbar-item">
                     <div className="buttons">
+                        <ToggleMode className="is-flex is-align-self-center mr-5" />
                         <Link className="button is-primary">
                             <strong>Sign up</strong>
                         </Link>
                         <Link className="button is-light">
                             Log in
                         </Link>
-                        <ToggleMode className="is-flex is-align-self-center mr-5" />
                     </div>
                 </div>
             </div>
