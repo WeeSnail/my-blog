@@ -11,12 +11,12 @@ const Pagination = ({pageContext, data}) => {
 
     const prevPage = () => {
         let num = currentPage - 1;
-        return num > 1 ? num : `/blogs`;
+        return num > 1 ? num : `/posts`;
     };
 
     const nextPage = () => {
         let num = currentPage + 1;
-        return num > numberOfPages ? `/blogs/${numberOfPages}` : `/blogs/${num}`;
+        return num > numberOfPages ? `/posts/${numberOfPages}` : `/posts/${num}`;
     };
 
     return (
