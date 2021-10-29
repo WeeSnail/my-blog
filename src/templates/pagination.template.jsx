@@ -1,40 +1,43 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import Layout from '../components/Layout';
 import PostListing from '../components/PostListing';
 
 const Pagination = ({pageContext, data}) => {
-  const {limit, currentPage, numberOfPages} = pageContext;
-  const {nodes} = data.allMarkdownRemark;
+    const {limit, currentPage, numberOfPages} = pageContext;
+    const {nodes} = data.allMarkdownRemark;
+    const isFirst = currentPage === 1;
+    const isLast = currentPage === numberOfPages;
 
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numberOfPages;
+    const prevPage = () => {
+        let num = currentPage - 1;
+        return num > 1 ? num : `/blogs`;
+    };
 
-  const prevPage = () => {
-    let num = currentPage - 1;
-    return num > 1 ? num : `/blogs`;
-  };
+    const nextPage = () => {
+        let num = currentPage + 1;
+        return num > numberOfPages ? `/blogs/${numberOfPages}` : `/blogs/${num}`;
+    };
 
-  const nextPage = () => {
-    let num = currentPage + 1;
-    return num > numberOfPages ? `/blogs/${numberOfPages}` : `/blogs/${num}`;
-  };
+    return (
+        <Layout>
 
-  return (
-    <Layout>
+            <PostListing posts={nodes} />
 
-      <PostListing posts={nodes} />
-      
-      <Link to={prevPage()} rel="prev" aria-disabled={isFirst} disabled={isFirst} className="button is-small">
-      Previous
-      </Link>
+            <Link to={prevPage()}
+                rel="prev"
+                aria-disabled={isFirst}
+                disabled={isFirst}
+                className="button is-small">Previous</Link>
 
-      <Link to={nextPage()} rel="next" aria-disabled={isLast} disabled={isLast} className="button is-small">
-      Next
-      </Link>
+            <Link to={nextPage()}
+                rel="next"
+                aria-disabled={isLast}
+                disabled={isLast}
+                className="button is-small">Next</Link>
 
-    </Layout>
-  )
+        </Layout>
+    )
 }
 
 export const query = graphql`
