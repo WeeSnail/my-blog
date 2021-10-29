@@ -8,7 +8,7 @@
 }
 
 .main-wrapper {
-    .dark {
+    &.dark {
         .navbar {
             background-color: transparent;
             .navbar-item {
@@ -25,7 +25,9 @@
         .title, .subtitle, .content, .post-title {
             color: #d8d8d8;
         }
-
+        .card {
+            background-color: transparent;
+        }
         .card-content {
             background-color: #232129;
             transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
@@ -37,12 +39,16 @@
     }
 }
 
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #ff0000 !important;
+}
+
 .light-dark-toggle.react-toggle{
-    &.react-toggle--cheched:hover {
-        &:not(.react-toggle--disabled) .react-toggle-track {
-            background-color: #000000;
-        }
-    }
+    // &.react-toggle--uncheched:hover {
+    //     &:not(.react-toggle--disabled) .react-toggle-track {
+    //         background-color: #000000;
+    //     }
+    // }
 
     .react-toggle-track {
         background-color: #000000;

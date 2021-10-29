@@ -2,7 +2,7 @@ import React from 'react';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { useTheme } from './ThemeProvider';
+import {useTheme} from './ThemeProvider';
 
 const ToggleMode = ({className}) => {
     const { switchTheme } = useTheme();
@@ -11,8 +11,8 @@ const ToggleMode = ({className}) => {
             onChange={switchTheme}
             className={`light-dark-toggle ${className}`}
             icons={{
-                checked: <FontAwesomeIcon inverse icon="sun" />,
-                unchecked: <FontAwesomeIcon inverse icon="moon" />
+                unchecked: <FontAwesomeIcon inverse icon='sun' />,
+                checked: <FontAwesomeIcon inverse icon="moon" />
             }}
         />
     )
