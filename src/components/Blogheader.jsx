@@ -1,17 +1,13 @@
 import React from 'react';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import ToggleMode from './ThemeToggle';
-import { useTheme } from './ThemeProvider';
 
 const Blogheader = () => {
-    const { theme } = useTheme();
-    console.log(theme);
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <Link className="navbar-item" to="/my_blog">
-                </Link>
 
+            <div className="navbar-brand">
+                <Link className="navbar-item" to="/my_blog"></Link>
                 <Link to="/" role="button" className="navbar-burger" aria-label="menu"
                     aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
@@ -21,52 +17,26 @@ const Blogheader = () => {
             </div>
 
             <div id="navbarBasicExample" className="navbar-menu">
+
                 <div className="navbar-start">
                     <Link to="/" className="navbar-item">
                         Home
                     </Link>
-
                     <Link to="/" className="navbar-item">
-                        Documentation
+                        About
                     </Link>
-
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <Link to="/" className="navbar-link">
-                            More
-                        </Link>
-
-                        <div className="navbar-dropdown">
-                            <Link to="/" className="navbar-item">
-                                About
-                            </Link>
-                            <Link to="/" className="navbar-item">
-                                Jobs
-                            </Link>
-                            <Link to="/" className="navbar-item">
-                                Contact
-                            </Link>
-                            <hr className="navbar-divider" />
-                            <Link to="/" className="navbar-item">
-                                Report an issue
-                            </Link>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
                             <ToggleMode className="is-flex is-align-self-center mr-5" />
-                            <Link to="/" className="button is-primary">
-                                <strong>Sign up</strong>
-                            </Link>
-                            <Link to="/" className="button is-light">
-                                Log in
-                            </Link>
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </nav>
     )
 };
