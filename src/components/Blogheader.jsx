@@ -2,6 +2,8 @@ import React, {useRef, useEffect} from 'react';
 import {Link} from 'gatsby';
 import ToggleMode from './ThemeToggle';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
+import * as hamburgerStyles from './Blogheader.module.scss';
 
 const Blogheader = () => {
 
@@ -19,58 +21,104 @@ const Blogheader = () => {
     //     }
     // }, [])
 
+
+    const Header = styled.header`
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid blue;
+    `
+    const Brand = styled.div`
+        color: white;
+        font-size: 1.5rem;
+        align-self: center;
+        padding: 1rem 0;
+        border: 1px solid green;
+    `
+    const Nav = styled.nav`
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            ul {
+                list-style: none;
+                li {
+                    display: inline-block;
+                    padding: 1rem;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-family: 'Lato', sans-serif;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        font-size: 1.5rem;
+                    }
+                    a::after {
+                        content: '';
+                        display: block;
+                        background-color: white;
+                        height: 0.2em;
+                        width: 0;
+                        margin-left: auto;
+                        transition: all ease-out 0.2s;
+                    }
+                    a:hover::after {
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right: auto;
+                    }
+                }
+            }
+    `
+    const Hright = styled.div`
+        display: flex;
+        align-items: center;
+    `
+
+    const Hleft = styled.div`
+        display: flex;
+        align-items: center;
+        span:nth-child(1) {
+            border: 1px solid red;
+            display: none;
+            @media(max-width: 796px) {
+                border: 1px solid yellow;
+                display: block;
+            }
+        }
+
+    `
     return (
-        <header className="header header--is-active">
-            <div className="header__brand">
-                <a href="#" className="brand__link">HOME</a>
-            </div>
-            <div className="header__hamburger">
-                <FontAwesomeIcon icon="bars" className="hamburger-expand" />
-                <FontAwesomeIcon icon="times" className="hamburger-collapse hidden" />
-            </div>
-            <div className="header__menu">
-                <nav>
-                    <ul className="menu-list">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        // <nav className="navbar" role="navigation" aria-label="main navigation">
+        <>
+            <Header className="header">
+                <Hright className="header_right">
+                    <Brand className="header__home">
+                        <a href="#" className="home__link">LOGO</a>
+                    </Brand>
 
-        //     <div className="navbar-brand">
-        //         <Link className="navbar-item" to="/my_blog"></Link>
-        //         <a role="button" className="navbar-burger" aria-label="menu"
-        //             aria-expanded="false" data-target="navbarBasicExample" ref={burger}>
-        //             <span aria-hidden="true"></span>
-        //             <span aria-hidden="true"></span>
-        //             <span aria-hidden="true"></span>
-        //         </a>
-        //     </div>
+                    <div className="header__menu">
+                        <Nav>
+                            <ul className="">
+                                <li><a className="header__link">Home</a></li>
+                                <li><a>About</a></li>
+                            </ul>
+                        </Nav>
+                    </div>
+                </Hright>
 
-        //     <div id="navbarBasicExample" className="navbar-menu" ref={navMenu}>
-
-        //         <div className="navbar-start">
-        //             <Link to="/" className="navbar-item">
-        //                 Home
-        //             </Link>
-        //             <Link to="/" className="navbar-item">
-        //                 About
-        //             </Link>
-        //         </div>
-
-        //         <div className="navbar-end">
-        //             <div className="navbar-item">
-        //                 <div className="buttons">
-        //                     <ToggleMode className="is-flex is-align-self-center mr-5" />
-        //                 </div>
-        //             </div>
-        //         </div>
-
-        //     </div>
-
-        // </nav>
+                <Hleft className="header_left">
+                    <span className="header__hamburger">
+                        <FontAwesomeIcon
+                            className={`hamburger-expand ${hamburgerStyles.isActive}`}
+                            icon="bars" />
+                        <FontAwesomeIcon
+                            className={`hamburger-collapse ${hamburgerStyles.isHidden}`}
+                            icon="times" />
+                    </span>
+                    <span>
+                        <ToggleMode className="is-flex is-align-self-center mr-0" />
+                    </span>
+                </Hleft>
+            </Header>
+        </>
     )
 };
 
