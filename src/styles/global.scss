@@ -4,11 +4,14 @@
   --box-shadow: black;
 }
 
-@media screen and(max-width: 768px) {
+@media screen and(min-width: 1024px) {
     // .columns {
     //     margin-left: 0;
     //     margin-right: 0;
     // }
+    .container {
+      margin: 5vh auto;
+    }
 }
 
 @media screen and(max-width: 1024px) {
@@ -20,7 +23,7 @@
 
 .main-wrapper {
   &.light {
-    .header .header_left .header__menu .menu__link {
+    .header .header_left, .header__menu .menu__link {
       color: #444;
     }
     .menu__link::after {
@@ -38,7 +41,7 @@
       .header {
           --box-shadow: white;
           background-color: transparent;
-          .header_left .header__menu .menu__link {
+          .header_left, .header__menu .menu__link {
               color: #d8d8d8;
           }
           .header__brand {
