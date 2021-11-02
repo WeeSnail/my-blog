@@ -1,7 +1,8 @@
 import React from 'react';
 import Post from './Post';
+import {Link} from 'gatsby';
 
-const PostListing = ({posts}) => {
+const PostListing = ({ posts }) => {
   return (
     <>
       <div className="columns is-multiline">
@@ -17,6 +18,12 @@ const PostListing = ({posts}) => {
             </div>
           )
         }
+        { /* Read more section: goes to paginated page */}
+        <span className="column is-9">
+          <Link to="/posts" className="button is-outlined read-more">
+            Read More
+          </Link>
+        </span>
       </div>
     </>
 
