@@ -3,10 +3,11 @@ import Layout from '../components/Layout';
 import FeaturedPost from '../components/FeaturedPost';
 import PostListing from '../components/PostListing';
 import Seo from '../components/Seo';
-import {graphql} from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 
 const IndexPage = ({data}) => {
+  console.log(data);
   return (
     <Layout>
 
@@ -33,7 +34,7 @@ const IndexPage = ({data}) => {
 }
 
 export const querty = graphql`
-query {
+query IndexQuery {
   allMarkdownRemark(limit: 2, sort: {order: DESC, fields: frontmatter___date}) {
     nodes {
       id

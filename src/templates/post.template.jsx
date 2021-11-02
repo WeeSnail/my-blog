@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import * as postStyles from './post-template.module.scss';
 
-const PostTemplate = ({data, pageContext}) => {
-    const {frontmatter} = data.markdownRemark;
+const PostTemplate = ({ data, pageContext }) => {
+    const { frontmatter } = data.markdownRemark;
     return (
         <Layout>
             <Seo

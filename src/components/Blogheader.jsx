@@ -7,20 +7,24 @@ import * as hamburgerStyles from './Blogheader.module.scss';
 
 const Header = styled.header`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid black;
+  box-shadow: var(--box-shadow) -0.3rem 0.3rem;
+  @media(max-width: 796px) {
+    justify-content: space-between;
+  }
 `;
 
 
 const Hleft = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Brand = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
   a {
     line-height: initial;
     font-size: 3.5rem;
@@ -35,10 +39,6 @@ const Brand = styled.div`
 `;
 
 const Menu = styled.nav`
-  display: flex;
-  flex-direction:row;
-  justify-items: center;
-  align-items: flex-end;
   ul {
     list-style: none;
     li {
@@ -46,7 +46,7 @@ const Menu = styled.nav`
       margin-left: 1.5rem;
       a {
         font-family: 'Lato', sans-serif;
-        font-weight: 500;
+        font-weight: 700;
         text-transform: uppercase;
         font-size: 1.2rem;
       }
@@ -69,15 +69,9 @@ const Menu = styled.nav`
 `;
 
 const Hright = styled.div`
-  display: flex;
-  align-items: center;
   span:nth-child(1) {
     border: 1px solid red;
     display: none;
-    @media(max-width: 796px) {
-      border: 1px solid yellow;
-      display: block;
-    }
   }
 `;
 
@@ -101,19 +95,20 @@ const Blogheader = () => {
   return (
       <Header className="header">
 
-        <Hleft className="header_left">
-          <Brand className="header__brand">
-          <a href="#" className="brand__link">A</a>
+      <Hleft className="header_left">
+        <Brand className="header__brand">
+          <Link to="/" className="brand__link">A</Link>
           <svg>
             <circle cx="10" cy="12.8" r="8" fill="#444" />
           </svg>
           </Brand>
+        </Hleft>
+
         <Menu className="header__menu">
-          <ul className="">
+        <ul className="">
             <li><a className="menu__link">about</a></li>
           </ul>
-            </Menu>
-        </Hleft>
+        </Menu>
 
         <Hright className="header_right">
           <span className="header__hamburger">

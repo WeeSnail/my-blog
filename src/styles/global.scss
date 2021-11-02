@@ -1,5 +1,9 @@
 @import '~bulma/bulma.sass';
 
+:root {
+  --box-shadow: black;
+}
+
 @media screen and(max-width: 768px) {
     // .columns {
     //     margin-left: 0;
@@ -13,44 +17,61 @@
     }
 }
 
+
 .main-wrapper {
-    &.dark {
-        .header {
-            background-color: transparent;
-            .header_left .header__menu .menu__link {
-                color: #d8d8d8;
-            }
-            .header__brand {
-                .brand__link {
-                    color: #d8d8d8;
-                }
-                svg > circle {
-                  fill: #d8d8d8;
-                }
-            }
-        }
-        .button {
-          color: #444;
-          &:hover {
-            background-color: #d4d4d4;
-            color: #444;
-          }
-        }
-        .title, .subtitle, .content, .post-title {
-            color: #d8d8d8;
-        }
-        .card {
-            background-color: transparent;
-        }
-        .card-content {
-            background-color: #232129;
-            transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
-            .card-body-wrapper {
-                background-color: #232129;
-                transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
-            }
-        }
+  &.light {
+    .header .header_left .header__menu .menu__link {
+      color: #444;
     }
+    .menu__link::after {
+      background-color: #444;
+    }
+
+  .read-more {
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  }
+  &.dark {
+      .header {
+          --box-shadow: white;
+          background-color: transparent;
+          .header_left .header__menu .menu__link {
+              color: #d8d8d8;
+          }
+          .header__brand {
+              .brand__link {
+                  color: #d8d8d8;
+              }
+              svg > circle {
+                fill: #d8d8d8;
+              }
+          }
+      }
+      .button {
+        color: #444;
+        &:hover {
+          background-color: #d4d4d4;
+          color: #444;
+        }
+      }
+      .title, .subtitle, .content, .post-title {
+          color: #d8d8d8;
+      }
+      .card {
+          background-color: transparent;
+      }
+      .card-content {
+          background-color: #232129;
+          transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+          .card-body-wrapper {
+              background-color: #232129;
+              transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+          }
+      }
+  }
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {

@@ -4,41 +4,41 @@ import Layout from '../components/Layout';
 import PostListing from '../components/PostListing';
 
 const Pagination = ({pageContext, data}) => {
-    const {limit, currentPage, numberOfPages} = pageContext;
-    const {nodes} = data.allMarkdownRemark;
-    const isFirst = currentPage === 1;
-    const isLast = currentPage === numberOfPages;
+  const {limit, currentPage, numberOfPages} = pageContext;
+  const {nodes} = data.allMarkdownRemark;
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === numberOfPages;
 
-    const prevPage = () => {
-        let num = currentPage - 1;
-        return num > 1 ? num : `/posts`;
-    };
+  const prevPage = () => {
+    let num = currentPage - 1;
+    return num > 1 ? num : `/posts`;
+  };
 
-    const nextPage = () => {
-        let num = currentPage + 1;
-        return num > numberOfPages ? `/posts/${numberOfPages}` : `/posts/${num}`;
-    };
+  const nextPage = () => {
+    let num = currentPage + 1;
+    return num > numberOfPages ? `/posts/${numberOfPages}` : `/posts/${num}`;
+  };
 
-    return (
-        <Layout>
+  return (
+    <Layout>
 
-            <PostListing posts={nodes} />
+      <PostListing posts={nodes} />
 
-            <Link to={prevPage()}
-                rel="prev"
-                aria-disabled={isFirst}
-                disabled={isFirst}
-                className="button is-small">Previous</Link>
+      <Link to={prevPage()}
+        rel="prev"
+        aria-disabled={isFirst}
+        disabled={isFirst}
+        className="button is-small">Previous</Link>
 
-            <Link to={nextPage()}
-                rel="next"
-                aria-disabled={isLast}
-                disabled={isLast}
-                className="button is-small">Next</Link>
+      <Link to={nextPage()}
+        rel="next"
+        aria-disabled={isLast}
+        disabled={isLast}
+        className="button is-small">Next</Link>
 
-        </Layout>
-    )
-}
+    </Layout>
+  )
+};
 
 export const query = graphql`
 query MyQuery($skip: Int!, $limit: Int!) {
@@ -58,6 +58,6 @@ query MyQuery($skip: Int!, $limit: Int!) {
     }
   }
 }
-`
+`;
 
 export default Pagination;
