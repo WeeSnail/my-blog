@@ -10,9 +10,10 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
 
-    <Seo title={`Home`} description={`welcome to my blog`} />
+      <Seo title={`Home`} description={`welcome to my blog`} />
 
-    { /* Show two featured posts.*/ }
+      { /* Shows two featured posts.*/}
+      { /*
       <div className="columns">
         {data.allMarkdownRemark.nodes.slice(0, 2).map(node => (
           <div key={node.id} className="column">
@@ -20,8 +21,9 @@ const IndexPage = ({data}) => {
           </div>
         ))}
       </div>
+          */ }
 
-    { /* List of posts*/ }
+      { /* List of posts*/}
       <div className="p-4">
         <PostListing posts={data.allMarkdownRemark.nodes} />
       </div>

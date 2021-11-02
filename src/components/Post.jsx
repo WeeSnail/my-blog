@@ -19,7 +19,7 @@ const Post = ({title, date, subtitle, slug}) => {
                 </div>
                 <p>{subtitle}</p>
                 <Link
-                    className="button is-link is-light"
+                    className="button is-light"
                     to={`/posts/${slug}`}>
                     Continue reading
                 </Link>

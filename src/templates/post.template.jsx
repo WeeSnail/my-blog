@@ -19,7 +19,7 @@ const PostTemplate = ({data, pageContext}) => {
                 className={postStyles.postContent}
                 dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}>
                 </div>
-            </article>
+        </article>
         </Layout>
     )
 }
