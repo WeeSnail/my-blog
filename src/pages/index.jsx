@@ -8,7 +8,27 @@ import styled from 'styled-components';
 
 const Main = styled.main`
   border: 1px solid var(--box-border);
-  box-shadow: var(--box-shadow) -0.3rem 0.3rem;
+  box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  padding: 2rem;
+`;
+
+const Button = styled.button`
+  background-color: transparent;
+  border: 1px solid var(--box-border);
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  transition: box-shadow 0.2s ease 0s, transform 0.2s ease 0s;
+  &:hover {
+    box-shadow: -0.3rem 0.3rem 0 var(--box-shadow);
+    border: 2px solid var(--box-shadow);
+    transform: translate(4px, -4px);
+  }
 `;
 
 const IndexPage = ({data}) => {
@@ -29,8 +49,16 @@ const IndexPage = ({data}) => {
           */ }
 
       { /* List of posts*/}
-      <Main className="p-4">
+      <Main className="">
         <PostListing posts={data.allMarkdownRemark.nodes} />
+        { /* Read more section: goes to paginated page */}
+        <span className="column is-9">
+          <Button className="read-more">
+            <Link to="/posts">
+              Read More
+            </Link>
+          </Button>
+        </span>
       </Main>
 
     </Layout>
