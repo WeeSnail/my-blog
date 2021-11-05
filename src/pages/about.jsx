@@ -6,8 +6,9 @@ import Seo from '../components/Seo';
 const About = ({data}) => {
   return (
     <Layout>
-    <Seo title={`About`} />
+      <Seo title={`About`} />
       <p>{data.site.siteMetadata.body.content}</p>
+      <p>this is my personal blog where i put notes and guide and thigs ifound</p>
     </Layout>
   )
 }
