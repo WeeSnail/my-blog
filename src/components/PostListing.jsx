@@ -5,9 +5,16 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   border: 1px solid var(--box-border);
-  box-shadow: var(--box-shadow) -0.1rem 0.1rem;
   margin: 0.5rem;
+  box-shadow: -0.1rem 0.1rem 0 var(--box-shadow);
+  transition: box-shadow 0.2s ease 0s, transform 0.2s ease 0s;
+  &:hover {
+    box-shadow: -0.3rem 0.3rem 0 var(--box-shadow);
+    transform: translate(4px, -4px);
+    outline: 2px solid var(--box-shadow);
+  }
 `;
+
 
 const PostListing = ({ posts }) => {
   return (
@@ -15,7 +22,7 @@ const PostListing = ({ posts }) => {
       <div className="columns is-multiline">
         {
           posts.map(post =>
-            <Card key={post.id} className="column is-9">
+            <Card key={post.id} className="column is-9 is-button">
               <Post
                 title={post.frontmatter.title}
                 subtitle={post.frontmatter.subtitle}
@@ -25,12 +32,6 @@ const PostListing = ({ posts }) => {
             </Card>
           )
         }
-        { /* Read more section: goes to paginated page */}
-        <span className="column is-9">
-          <Link to="/posts" className="button is-outlined read-more">
-            Read More
-          </Link>
-        </span>
       </div>
     </>
 
