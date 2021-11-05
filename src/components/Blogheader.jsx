@@ -11,7 +11,8 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: flex-end;
   padding: 0.5rem 1.5rem;
-  border: 2px solid black;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--box-border);
   box-shadow: var(--box-shadow) -0.3rem 0.3rem;
   @media(max-width: 796px) {
     justify-content: space-between;
@@ -76,10 +77,8 @@ const Hright = styled.div`
 `;
 
 const Blogheader = () => {
-
   // const burger = useRef();
   // const navMenu = useRef();
-
   // useEffect(() => {
   //     console.log(burger.current)
   //     burger.current.addEventListener('click', () => {
@@ -94,7 +93,6 @@ const Blogheader = () => {
 
   return (
       <Header className="header">
-
       <Hleft className="header_left">
         <Brand className="header__brand">
           <Link to="/" className="brand__link">A</Link>
