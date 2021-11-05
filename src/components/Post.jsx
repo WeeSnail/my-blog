@@ -8,9 +8,9 @@ const style = {
 }
 
 const Post = ({title, date, subtitle, slug}) => {
-    return (
-        <>
-            <div className="content is-normal">
+  return (
+    <>
+            <Link className="content is-normal" to={`/posts/${slug}`}>
                 <div className="head-wrapper mb-2">
                     <h2 className="mb-0 post-title">{title}</h2>
                     <time
@@ -18,12 +18,12 @@ const Post = ({title, date, subtitle, slug}) => {
                         dateTime={style.time}>{date}</time>
                 </div>
                 <p>{subtitle}</p>
-                <Link
-                    className="button is-light"
-                    to={`/posts/${slug}`}>
-                    Continue reading
-                </Link>
-            </div>
+                {/* <Link */}
+                {/*     className="button is-light" */}
+                {/*     to={`/posts/${slug}`}> */}
+                {/*     Continue reading */}
+                {/* </Link> */}
+            </Link>
         </>
     )
 };
