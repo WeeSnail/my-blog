@@ -3,11 +3,15 @@ import Layout from '../components/Layout';
 import FeaturedPost from '../components/FeaturedPost';
 import PostListing from '../components/PostListing';
 import Seo from '../components/Seo';
-import { graphql, Link } from 'gatsby';
+import {graphql, Link} from 'gatsby';
+import styled from 'styled-components';
 
+const Main = styled.main`
+  border: 1px solid var(--box-border);
+  box-shadow: var(--box-shadow) -0.3rem 0.3rem;
+`;
 
 const IndexPage = ({data}) => {
-  console.log(data);
   return (
     <Layout>
 
@@ -25,9 +29,9 @@ const IndexPage = ({data}) => {
           */ }
 
       { /* List of posts*/}
-      <div className="p-4">
+      <Main className="p-4">
         <PostListing posts={data.allMarkdownRemark.nodes} />
-      </div>
+      </Main>
 
     </Layout>
   )
