@@ -11,13 +11,14 @@ import React, {
 const themes = {
   light: {
     type: 'light',
-      background: '#fff',
+      background: '#d4d4d4',
+      // fontColor: '#10162f'
       fontColor: '#444'
     },
   dark: {
     type: 'dark',
-      background: '#444',
-      fontColor: '#d4d4d4'
+    background: '#10162f',
+      fontColor: '#d8d8d8'
     }
 };
 
