@@ -30,7 +30,6 @@ const Brand = styled.div`
     line-height: initial;
     font-size: 3.5rem;
     font-weight: 700;
-    color: #444;
   }
   svg {
     height: 1.3rem;
