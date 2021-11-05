@@ -4,9 +4,7 @@ import styled from 'styled-components';
 
 
 const FixedFooter = styled.footer`
-  position: fixed;
   width: 100%;
-  bottom: 0;
   display: flex;
   justify-content: center;
 `;
