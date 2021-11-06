@@ -5,13 +5,12 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   border: 1px solid var(--box-border);
-  margin: 0.5rem;
+  margin: 1rem;
   box-shadow: -0.1rem 0.1rem 0 var(--box-shadow);
   transition: box-shadow 0.2s ease 0s, transform 0.2s ease 0s;
   &:hover {
-    box-shadow: -0.3rem 0.3rem 0 var(--box-shadow);
+    box-shadow: -0.4rem 0.4rem 0 var(--box-shadow);
     transform: translate(4px, -4px);
-    outline: 2px solid var(--box-shadow);
   }
 `;
 

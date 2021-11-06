@@ -11,9 +11,9 @@ import React, {
 const themes = {
   light: {
     type: 'light',
-      background: '#d4d4d4',
-      // fontColor: '#10162f'
-      fontColor: '#444'
+      background: '#eae5e4',
+      fontColor: '#10162f'
+      // fontColor: '#444'
     },
   dark: {
     type: 'dark',

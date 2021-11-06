@@ -26,7 +26,7 @@ const Button = styled.button`
   transition: box-shadow 0.2s ease 0s, transform 0.2s ease 0s;
   &:hover {
     box-shadow: -0.3rem 0.3rem 0 var(--box-shadow);
-    border: 2px solid var(--box-shadow);
+    // outline: 2px solid var(--box-shadow);
     transform: translate(4px, -4px);
   }
 `;
