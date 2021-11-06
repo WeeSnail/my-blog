@@ -3,7 +3,7 @@ const {createFilePath} = require('gatsby-source-filesystem');
 /* ###############################################
 INIT CREATE PAGES FOR THE MARKDOWNS.
 """"""""""""""""""""""""""""""""""""""""""""""""*/
-exports.createPages = async function ({actions, graphql}) {
+exports.createPages = async function ({actions, page, graphql}) {
 
   // Data querying: with Graphql.
   const result = await graphql(`
@@ -21,28 +21,25 @@ exports.createPages = async function ({actions, graphql}) {
   const {nodes} = result.data.allMarkdownRemark;
 
   const paginationItems = 2;
-
   const numberOfPages = Math.ceil(nodes.length / paginationItems);
 
   Array.from({length: numberOfPages}).forEach((_, i) => {
-
-    // Paginarion.
+    // Pagination.
     const pageNumber = i + 1;
     // Create the pagination page.
     actions.createPage({
-      path: pageNumber === 1 ? `/blogs` : `/blogs/${pageNumber}`,
+      path: pageNumber === 1 ? `/posts` : `/posts/${pageNumber}`,
       component: require.resolve(`./src/templates/pagination.template.jsx`),
       context: {
-        skip: i * paginationItems,
         limit: paginationItems,
+        skip: i * paginationItems,
         currentPage: pageNumber,
         numberOfPages
       }
     });
-
   });
 
-  // Create posts' pages.
+  // Create posts' pages form md.
   nodes.forEach(node => {
     actions.createPage({
       path: `/posts/${node.frontmatter.slug}`,
@@ -52,7 +49,6 @@ exports.createPages = async function ({actions, graphql}) {
       }
     })
   });
-
 }
 /*""""""""""""""""""""""""""""""""""""""""""""""""
 END pageCreating.

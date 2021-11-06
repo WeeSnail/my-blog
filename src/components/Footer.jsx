@@ -1,11 +1,29 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import {Link, graphql, useStaticQuery} from 'gatsby';
+import styled from 'styled-components';
+
+
+const FixedFooter = styled.footer`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
 const Copyright = () => {
+  const data = useStaticQuery(graphql`
+        query{
+            site {
+                siteMetadata {
+                    siteUrl
+                }
+            }
+        }
+    `)
+
   return (
     <footer>
       {'Copyright © '}
-      <Link color="inherit" to="/">
+      <Link color="inherit" to={data.site.siteMetadata.siteUrl}>
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -16,7 +34,7 @@ const Copyright = () => {
 
 const Footer = () => {
   return (
-    <footer>
+    <FixedFooter>
       <div className="p-5">
         <nav className="level">
           <div className="level-item has-text-centered">
@@ -25,8 +43,9 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-    </footer>
+    </FixedFooter>
   )
 };
+
 
 export default Footer;

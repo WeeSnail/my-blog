@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeProvider, { useTheme } from './ThemeProvider';
 import { library, config } from '@fortawesome/fontawesome-svg-core';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 /**
@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false;
 // Adding the icons to library here will allows us to refer to them by their
 // icon string names; 'sun' and 'moon'. Check out ThemeToggle.jsx.
-library.add(faSun, faMoon);
+library.add(faSun, faMoon, faBars, faTimes);
 
 const MainWrapper = ({children}) => {
     const {theme} = useTheme();

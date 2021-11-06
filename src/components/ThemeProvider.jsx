@@ -9,15 +9,16 @@ import React, {
  * It would be a better idea nex time to try `Provider` from redux.
 ---------------------------------------------------------------------------- */
 const themes = {
-    light: {
-        type: 'light',
-        background: '#fff',
-        fontColor: '#2b2c38'
+  light: {
+    type: 'light',
+      background: '#eae5e4',
+      fontColor: '#10162f'
+      // fontColor: '#444'
     },
-    dark: {
-        type: 'dark',
-        background: '#2b2c38',
-        fontColor: '#d4d4d4'
+  dark: {
+    type: 'dark',
+    background: '#10162f',
+      fontColor: '#d8d8d8'
     }
 };
 

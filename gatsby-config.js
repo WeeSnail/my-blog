@@ -17,6 +17,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-sass`,
+        `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,
@@ -31,7 +32,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'content',
-                path: `${__dirname}/content/`,
+                path: `${__dirname}/content/posts`,
             }
         },
         { // File transformer (transform sourced files)
