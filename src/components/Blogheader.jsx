@@ -105,10 +105,10 @@ const Blogheader = () => {
         <ul className="">
             <li><a className="menu__link">about</a></li>
           </ul>
-        </Menu>
+      </Menu>
 
-        <Hright className="header_right">
-          <span className="header__hamburger">
+      <Hright className="header_right">
+        <span className="header__hamburger">
             <FontAwesomeIcon
               className={`hamburger-expand ${hamburgerStyles.isActive}`}
               icon="bars" />
