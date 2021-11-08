@@ -1,7 +1,8 @@
 import React from 'react';
-import ThemeProvider, { useTheme } from './ThemeProvider';
-import { library, config } from '@fortawesome/fontawesome-svg-core';
-import { faSun, faMoon, faBars, faTimes, faLongArrowAltLeft} from '@fortawesome/free-solid-svg-icons';
+import ThemeProvider, {useTheme} from './ThemeProvider';
+import Canvas from './Canvas';
+import {library, config} from '@fortawesome/fontawesome-svg-core';
+import {faSun, faMoon, faBars, faTimes, faLongArrowAltLeft} from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 /**
@@ -13,32 +14,39 @@ config.autoAddCss = false;
 // icon string names; 'sun' and 'moon'. Check out ThemeToggle.jsx.
 library.add(faSun, faMoon, faBars, faTimes, faLongArrowAltLeft);
 
+
 const MainWrapper = ({children}) => {
-    const {theme} = useTheme();
-    return (
-        <React.Fragment>
-            <div className={`main-wrapper ${theme.type}`}>
-                {children}
-            </div>
-            <style>
-                {`
-                html, body {
-                    background: ${theme.background};
-                    color: ${theme.fontColor};
-                    transition: all 0.2s ease-out;
-                }
-            `}
-            </style>
-        </React.Fragment>
-    )
+  const {theme} = useTheme();
+  return (
+    <React.Fragment>
+      <Canvas />
+      <div style={{height: `100vh`}} className={`main-wrapper ${theme.type}`}>
+        {children}
+      </div>
+      <style>
+        {`
+          html,
+          .hero,
+          .header,
+          .card,
+          .read-more,
+          .about-main {
+            background: ${theme.background};
+            color: ${theme.fontColor};
+            transition: all 0.2s ease-out;
+          }
+        `}
+      </style>
+    </React.Fragment>
+  )
 };
 
 const RootLayout = ({children}) => {
-    return (
-        <ThemeProvider>
-            <MainWrapper>{children}</MainWrapper>
-        </ThemeProvider>
-    )
+  return (
+    <ThemeProvider>
+      <MainWrapper>{children}</MainWrapper>
+    </ThemeProvider>
+  )
 };
 
 export default RootLayout;
