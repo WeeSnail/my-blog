@@ -35,6 +35,10 @@ const MainWrapper = ({children}) => {
             color: ${theme.fontColor};
             transition: all 0.2s ease-out;
           }
+            body {
+              color: ${theme.fontColor};
+              transition: all 0.2s ease-out;
+            }
         `}
       </style>
     </React.Fragment>
