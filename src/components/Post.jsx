@@ -18,11 +18,6 @@ const Post = ({title, date, subtitle, slug}) => {
             dateTime={style.time}>{date}</time>
         </div>
         <p>{subtitle}</p>
-        {/* <Link */}
-        {/*     className="button is-light" */}
-        {/*     to={`/posts/${slug}`}> */}
-        {/*     Continue reading */}
-        {/* </Link> */}
       </Link>
     </>
   )
