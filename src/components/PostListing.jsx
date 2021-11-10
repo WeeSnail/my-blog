@@ -27,7 +27,7 @@ const PostListing = ({ posts }) => {
       <CardsList className="cards-list">
         {
           posts.map(post =>
-            <Card key={post.id} className="column is-9 is-button card">
+            <Card key={post.id} className="column is-9 is-button post-card">
               <Post
                 title={post.frontmatter.title}
                 subtitle={post.frontmatter.subtitle}
