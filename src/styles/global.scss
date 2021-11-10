@@ -75,12 +75,11 @@
 
       /*Read more button*/
     .read-more {
-      background-color: transparent;
-      border-color: black;
+      border-color: var(--box-border);
       border-radius: none;
-      &:hover {
-        background-color: transparent;
-      }
+      // &:hover {
+      //   background-color: transparent;
+      // }
       a {
         color: var(--font-light-bg);
       }
