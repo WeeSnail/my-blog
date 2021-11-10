@@ -5,7 +5,6 @@ import {graphql} from 'gatsby';
 import Seo from '../components/Seo';
 import styled from 'styled-components';
 
-
 const Main = styled.main`
   font-size: 1.2rem;
   display: flex;
@@ -14,6 +13,7 @@ const Main = styled.main`
   border: 1px solid var(--box-border);
   box-shadow: -0.2rem 0.2rem var(--box-shadow);
   padding: 2rem 0.5rem;
+
   svg {
     width: 5rem;
     height: 5rem;
@@ -74,12 +74,12 @@ const Main = styled.main`
   text-align: center;
 `;
 
-const About = ({}) => {
+const About = () => {
   return (
     <Layout>
       <Main className="about-main">
         <Seo title={`About`} />
-        <Logo colors={{}} />
+        <Logo />
 
         <h2 style={{display: 'list-item'}}>Who am I?</h2>
 
@@ -110,8 +110,8 @@ const About = ({}) => {
           a playground for hacking on Gatsbyjs and SSG(<small>and also to have
             something to put on my portfolio<span>&#129323;</span></small>)</p>
         <h2 style={{display: 'list-item'}}>How was this blog built?</h2>
-        <p>The blog's initial scaffolding was done using a combination of <a href="https://github.com/gatsbyjs/gatsby-starter-minimal" target="_blank">Gatsby's minimal starter</a> and <a href="https://github.com/jgthms/bulma" target="_blank">Bulma</a>. It also features the use of <a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a>, <a href="https://github.com/css-modules/css-modules" target="_blank">CSS Modules</a>, SEO, RSS feeds, theming, PWA support and more.</p>
-        <p>Again, the main purpose is to experiment with different plugins, UI elements, colors, etcetera. You can find the <a href="https://github.com/WeeSnail/my-blog" target="_blank">code base</a> on Github.</p>
+        <p>The blog's initial scaffolding was done using a combination of <a href="https://github.com/gatsbyjs/gatsby-starter-minimal" target="_blank" rel="noreferrer">Gatsby's minimal starter</a> and <a href="https://github.com/jgthms/bulma" target="_blank" rel="noreferrer">Bulma</a>. It also features the use of <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noreferrer">styled-components</a>, <a href="https://github.com/css-modules/css-modules" target="_blank" rel="noreferrer">CSS Modules</a>, SEO, RSS feeds, theming, PWA support and more.</p>
+        <p>Again, the main purpose is to experiment with different plugins, UI elements, colors, etcetera. You can find the <a href="https://github.com/WeeSnail/my-blog" target="_blank" rel="noreferrer">code base</a> on Github.</p>
 
       </Main>
     </Layout>

@@ -59,17 +59,6 @@ const IndexPage = ({data}) => {
 
       <Seo title={`Home`} description={`welcome to my blog`} />
 
-      { /* Shows two featured posts.*/}
-      { /*
-      <div className="columns">
-        {data.allMarkdownRemark.nodes.slice(0, 2).map(node => (
-          <div key={node.id} className="column">
-            <FeaturedPost post={node} />
-          </div>
-        ))}
-      </div>
-          */ }
-
       <Hero className="hero">
         <span></span>
         <h1>Anes's Open Playground</h1>

@@ -23,9 +23,9 @@ const Copyright = () => {
   return (
     <footer>
       {'Copyright © '}
-      <Link color="inherit" to={data.site.siteMetadata.siteUrl}>
+      <a color="inherit" href={data.site.siteMetadata.siteUrl}>
         Your Website
-      </Link>{' '}
+      </a>{' '}
       {new Date().getFullYear()}
       {'.'}
     </footer>
@@ -40,7 +40,7 @@ const Footer = () => {
         <nav className="level">
           <div className="level-item has-text-centered">
             <Copyright />
-            <a href="/rss.xml" target="_blank">RSS</a>
+            <Link to="/rss.xml" target="_blank">RSS</Link>
           </div>
         </nav>
       </div>

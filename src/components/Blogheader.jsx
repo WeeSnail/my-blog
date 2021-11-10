@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
 import {Link} from 'gatsby';
 import ToggleMode from './ThemeToggle';
 import Logo from './Logo';
@@ -72,26 +72,10 @@ const Hright = styled.div`
 
 const Blogheader = () => {
   const {theme} = useTheme();
-  // const burger = useRef();
-  // const navMenu = useRef();
-  // useEffect(() => {
-  //     console.log(burger.current)
-  //     burger.current.addEventListener('click', () => {
-  //         burger.current.classList.toggle('is-active');
-  //         navMenu.current.classList.toggle('is-active');
-  //     });
-  //     return () => {
-  //         console.log('Done mounting!!')
-  //     }
-  // }, [])
 
   return (
     <Header className="header">
 
-      {/*
-        <Hleft className="header_left">
-        </Hleft>
-        */}
       <Brand className="header__brand">
         <Link to="/" className="brand__link">
           <Logo colors={{
