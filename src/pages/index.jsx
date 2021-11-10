@@ -43,6 +43,7 @@ const Hero = styled.div`
   align-items: center;
   margin-bottom: 1.2rem;
   // padding-left: 0.75rem;
+  padding: 0.5rem 0;
   padding-left: 1.75rem;
   // color: var(--hero-font);
   // background-color: var(--hero-bg);
