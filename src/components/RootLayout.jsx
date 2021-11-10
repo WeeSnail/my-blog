@@ -28,7 +28,7 @@ const MainWrapper = ({children}) => {
           html,
           .hero,
           .header,
-          .card,
+          .post-card,
           .read-more,
           .about-main {
             background: ${theme.background};
