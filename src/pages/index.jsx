@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import FeaturedPost from '../components/FeaturedPost';
 import PostListing from '../components/PostListing';
 import Seo from '../components/Seo';
 import {graphql, Link} from 'gatsby';
