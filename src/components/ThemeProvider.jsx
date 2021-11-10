@@ -12,21 +12,21 @@ const themes = {
   light: {
     type: 'light',
       background: '#eae5e4',
-      fontColor: '#10162f'
+      fontColor: '#262d4b'
       // fontColor: '#444'
     },
   dark: {
     type: 'dark',
-    background: '#10162f',
+    background: '#262d4b',
       fontColor: '#d8d8d8'
     }
 };
 
 const ThemeContext = createContext({});
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({children}) => {
     /*Default dark*/
-    const [theme, setTheme] = useState(themes.dark);
+    const [theme, setTheme] = useState(themes.light);
     const switchTheme = useCallback(
         // Checks the theme's value.
         () => setTheme(theme === themes.dark ? themes.light : themes.dark),

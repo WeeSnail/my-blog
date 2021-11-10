@@ -2,7 +2,6 @@ import React from 'react';
 import {Link, graphql, useStaticQuery} from 'gatsby';
 import styled from 'styled-components';
 
-
 const FixedFooter = styled.footer`
   width: 100%;
   display: flex;
@@ -10,6 +9,7 @@ const FixedFooter = styled.footer`
 `;
 
 const Copyright = () => {
+
   const data = useStaticQuery(graphql`
         query{
             site {
@@ -18,7 +18,7 @@ const Copyright = () => {
                 }
             }
         }
-    `)
+    `);
 
   return (
     <footer>
@@ -30,6 +30,7 @@ const Copyright = () => {
       {'.'}
     </footer>
   );
+
 };
 
 const Footer = () => {

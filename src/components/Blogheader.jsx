@@ -1,39 +1,34 @@
 import React, {useRef, useEffect} from 'react';
 import {Link} from 'gatsby';
 import ToggleMode from './ThemeToggle';
+import Logo from './Logo';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import * as hamburgerStyles from './Blogheader.module.scss';
+import {useTheme} from './ThemeProvider';
 
 const Header = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 0.5rem 1.5rem;
-  margin-bottom: 1.4rem;
-  border: 1px solid var(--box-border);
-  box-shadow: var(--box-shadow) -0.3rem 0.3rem;
+  padding-top: 0;
+  margin-bottom: 1.2rem;
   @media(max-width: 796px) {
     justify-content: space-between;
   }
 `;
 
-
-const Hleft = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 const Brand = styled.div`
   a {
     line-height: initial;
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
   svg {
-    height: 1.3rem;
-    width: 1.3rem;
+    // height: 1.3rem;
+    width: 3rem;
     margin-left: -0.2em;
   }
 `;
@@ -76,6 +71,7 @@ const Hright = styled.div`
 `;
 
 const Blogheader = () => {
+  const {theme} = useTheme();
   // const burger = useRef();
   // const navMenu = useRef();
   // useEffect(() => {
@@ -89,39 +85,44 @@ const Blogheader = () => {
   //     }
   // }, [])
 
-
   return (
-      <Header className="header">
-      <Hleft className="header_left">
-        <Brand className="header__brand">
-          <Link to="/" className="brand__link">A</Link>
-          <svg>
-            <circle cx="10" cy="12.8" r="8" fill="#444" />
-          </svg>
-          </Brand>
+    <Header className="header">
+
+      {/*
+        <Hleft className="header_left">
         </Hleft>
+        */}
+      <Brand className="header__brand">
+        <Link to="/" className="brand__link">
+          <Logo colors={{
+            stroke: `${theme.fontColor}`,
+            fill: `${theme.background}`,
+            inner: `#000`
+          }}/>
+        </Link>
+      </Brand>
 
-        <Menu className="header__menu">
+      <Menu className="header__menu">
         <ul className="">
-            <li><a className="menu__link">about</a></li>
-          </ul>
-        </Menu>
+          <li><Link to="/about" className="menu__link">about</Link></li>
+        </ul>
+      </Menu>
 
-        <Hright className="header_right">
-          <span className="header__hamburger">
-            <FontAwesomeIcon
-              className={`hamburger-expand ${hamburgerStyles.isActive}`}
-              icon="bars" />
-            <FontAwesomeIcon
-              className={`hamburger-collapse ${hamburgerStyles.isHidden}`}
-              icon="times" />
-          </span>
-          <span>
-            <ToggleMode className="is-flex is-align-self-center mr-0" />
-          </span>
-        </Hright>
+      <Hright className="header_right">
+        <span className="header__hamburger">
+          <FontAwesomeIcon
+            className={`hamburger-expand ${hamburgerStyles.isActive}`}
+            icon="bars" />
+          <FontAwesomeIcon
+            className={`hamburger-collapse ${hamburgerStyles.isHidden}`}
+            icon="times" />
+        </span>
+        <span>
+          <ToggleMode className="is-flex is-align-self-center mr-0" />
+        </span>
+      </Hright>
 
-      </Header>
+    </Header>
   )
 };
 

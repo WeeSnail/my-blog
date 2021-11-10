@@ -7,6 +7,9 @@ import {graphql, Link} from 'gatsby';
 import styled from 'styled-components';
 
 const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid var(--box-border);
   box-shadow: -0.2rem 0.2rem var(--box-shadow);
   padding: 2rem;
@@ -31,6 +34,25 @@ const Button = styled.button`
   }
 `;
 
+const Hero = styled.div`
+  border: 1px solid var(--box-border);
+  box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  // padding-left: 0.75rem;
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  // color: var(--hero-font);
+  // background-color: var(--hero-bg);
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+`;
+
 const IndexPage = ({data}) => {
   return (
     <Layout>
@@ -48,17 +70,21 @@ const IndexPage = ({data}) => {
       </div>
           */ }
 
+      <Hero className="hero">
+        <span></span>
+        <h1>Anes's Open Playground</h1>
+        <h2>Front-end shenanigans, design, vim, Linux and more</h2>
+      </Hero>
+
       { /* List of posts*/}
       <Main className="">
         <PostListing posts={data.allMarkdownRemark.nodes} />
         { /* Read more section: goes to paginated page */}
-        <span className="column is-9">
           <Button className="read-more">
             <Link to="/posts">
               Read More
             </Link>
           </Button>
-        </span>
       </Main>
 
     </Layout>

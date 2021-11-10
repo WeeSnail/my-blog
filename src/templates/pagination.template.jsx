@@ -8,6 +8,9 @@ import styled from 'styled-components';
 const Main = styled.main`
   border: 1px solid var(--box-border);
   box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
 `;
 
@@ -17,6 +20,7 @@ const Span = styled.span`
 `;
 
 const Pagination = ({pageContext, data}) => {
+
   const {limit, currentPage, numberOfPages} = pageContext;
   const {nodes} = data.allMarkdownRemark;
   const isFirst = currentPage === 1;

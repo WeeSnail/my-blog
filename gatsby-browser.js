@@ -4,8 +4,8 @@ import './src/styles/normalize.scss';
 import './src/styles/global.scss';
 
 export const wrapRootElement = ({element}) => {
-    return (
-        <RootLayout>{element}</RootLayout>
-    )
+  return (
+    <RootLayout>{element}</RootLayout>
+  )
 };
 
