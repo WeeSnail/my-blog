@@ -68,7 +68,7 @@ const PostTemplate = ({data, pageContext}) => {
       <PostWrapper>
         <Link to="/">
           <FontAwesomeIcon className="arrow-icon" icon="long-arrow-alt-left" />
-          Go back
+          back to home
         </Link>
 
         <h1>{data.markdownRemark.frontmatter.title}</h1>

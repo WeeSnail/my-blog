@@ -102,7 +102,7 @@ const Blogheader = () => {
         </Link>
       </Brand>
 
-      <Menu className="header__menu"> 
+      <Menu className="header__menu">
         <ul className="">
           <li><Link to="/about" className="menu__link">about</Link></li>
         </ul>
