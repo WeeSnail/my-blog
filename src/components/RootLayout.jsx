@@ -19,7 +19,9 @@ const MainWrapper = ({children}) => {
   const {theme} = useTheme();
   return (
     <React.Fragment>
-      <Canvas />
+      {/*
+        <Canvas />
+        */}
       <div style={{height: `100vh`}} className={`main-wrapper ${theme.type}`}>
         {children}
       </div>
