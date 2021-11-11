@@ -6,12 +6,13 @@ import Seo from '../components/Seo';
 import styled from 'styled-components';
 
 const Main = styled.main`
-  font-size: 1.2rem;
+  // font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px solid var(--box-border);
-  box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  background-color: transparent;
+  // box-shadow: -0.2rem 0.2rem var(--box-shadow);
   padding: 2rem 0.5rem;
 
   svg {
@@ -27,7 +28,7 @@ const Main = styled.main`
   p {
     margin: 0.5rem 0;
     max-width: 42em;
-    line-height: 1.8em;
+    // line-height: 1.8em;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -81,17 +82,6 @@ const About = () => {
         <Seo title={`About`} />
         <Logo />
 
-        <h2 style={{display: 'list-item'}}>Who am I?</h2>
-
-        <p><span>&#128075;</span>Hi, my name is Anes, I'm a Front-End Developer from Tunisia with a keen
-          interest in graphics, designs, UI, and animations.
-        </p>
-
-        <br />
-
-        <p>A blundering user of Linux, tiling window managers, and VIM. I'm
-          always on the hunt for the best development workflow.</p>
-
         <h2 style={{display: 'list-item'}}>About the blog</h2>
 
         <p>This is the place where I'll be writing about my journey striding
@@ -106,11 +96,19 @@ const About = () => {
           so the majority of my posts will be more like a personal inner talk than
           guides or tutorials :)</p>
 
-        <p>The technical reason behind the existence of this blog is for it to serve as
-          a playground for hacking on Gatsbyjs and SSG(<small>and also to have
-            something to put on my portfolio<span>&#129323;</span></small>)</p>
+        <h2 style={{display: 'list-item'}}>Who am I?</h2>
+
+        <p><span>&#128075;</span>Hi, my name is Anes, I'm a Front-End Developer from Tunisia with a keen
+          interest in graphics, designs, UI, and animations.
+        </p>
+
+        <br />
+
+        <p>A blundering user of Linux, tiling window managers, and VIM. I'm
+          always on the hunt for the best development workflow.</p>
+
         <h2 style={{display: 'list-item'}}>How was this blog built?</h2>
-        <p>The blog's initial scaffolding was done using a combination of <a href="https://github.com/gatsbyjs/gatsby-starter-minimal" target="_blank" rel="noreferrer">Gatsby's minimal starter</a> and <a href="https://github.com/jgthms/bulma" target="_blank" rel="noreferrer">Bulma</a>. It also features the use of <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noreferrer">styled-components</a>, <a href="https://github.com/css-modules/css-modules" target="_blank" rel="noreferrer">CSS Modules</a>, SEO, RSS feeds, theming, PWA support and more.</p>
+        <p>The blog's initial bootstrap was done using a combination of <a href="https://github.com/gatsbyjs/gatsby-starter-minimal" target="_blank" rel="noreferrer">Gatsby's minimal starter</a> and <a href="https://github.com/jgthms/bulma" target="_blank" rel="noreferrer">Bulma</a>. It also features the use of <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noreferrer">styled-components</a>, <a href="https://github.com/css-modules/css-modules" target="_blank" rel="noreferrer">CSS Modules</a>, SEO, RSS feeds, theming, PWA support and more.</p>
         <p>Again, the main purpose is to experiment with different plugins, UI elements, colors, etcetera. You can find the <a href="https://github.com/WeeSnail/my-blog" target="_blank" rel="noreferrer">code base</a> on Github.</p>
 
       </Main>

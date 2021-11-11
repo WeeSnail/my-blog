@@ -12,6 +12,12 @@ const Card = styled.div`
     box-shadow: -0.4rem 0.4rem 0 var(--box-shadow);
     transform: translate(4px, -4px);
   }
+  div {
+    h2 {
+      // font-family: 'Recursive';
+      font-weight: 400;
+    }
+  }
 `;
 
 const CardsList = styled.div`

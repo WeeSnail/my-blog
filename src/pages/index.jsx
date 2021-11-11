@@ -10,7 +10,7 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   border: 1px solid var(--box-border);
-  box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  // box-shadow: -0.2rem 0.2rem var(--box-shadow);
   padding: 2rem;
 `;
 
@@ -35,7 +35,7 @@ const Button = styled.button`
 
 const Hero = styled.div`
   border: 1px solid var(--box-border);
-  box-shadow: -0.2rem 0.2rem var(--box-shadow);
+  // box-shadow: -0.2rem 0.2rem var(--box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +48,6 @@ const Hero = styled.div`
   // background-color: var(--hero-bg);
   h1 {
     font-size: 2em;
-    font-weight: 700;
   }
 `;
 

@@ -40,10 +40,11 @@ const Menu = styled.nav`
       display: inline-block;
       margin-left: 1.5rem;
       a {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Exo 2';
+        // font-family: 'Lato', sans-serif;
         font-weight: 700;
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       a::after {
         content: '';
