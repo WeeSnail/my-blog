@@ -4,6 +4,8 @@ import Seo from '../components/Seo';
 import {graphql, Link} from 'gatsby';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import Gitalk from 'gatsby-plugin-gitalk';
+import '@suziwen/gitalk/dist/gitalk.css';
 
 const PostWrapper = styled.article`
   .post-content {
@@ -57,6 +59,9 @@ const PostWrapper = styled.article`
 
 const PostTemplate = ({data, pageContext}) => {
   const {frontmatter} = data.markdownRemark;
+  let gitalkConfig = {
+    title: data.markdownRemark.frontmatter.title
+  }
   return (
     <Layout>
       <Seo
@@ -78,6 +83,7 @@ const PostTemplate = ({data, pageContext}) => {
         </div>
 
       </PostWrapper>
+      <Gitalk options={gitalkConfig}/>
 
     </Layout>
   )

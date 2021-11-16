@@ -1,5 +1,6 @@
 const rssOptions = require('./utils/rss-options');
 const manifestOptions = require('./utils/manifest-options');
+const gitalkConfig = require('./utils/gitalk-options');
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -19,6 +20,10 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-gitalk`,
+      options: gitalkConfig 
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: manifestOptions,
