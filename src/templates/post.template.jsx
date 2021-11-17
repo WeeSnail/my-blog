@@ -75,14 +75,15 @@ const PostTemplate = ({data, pageContext}) => {
           <FontAwesomeIcon className="arrow-icon" icon="long-arrow-alt-left" />
           back to home
         </Link>
-
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        {/*
+          <h1>{data.markdownRemark.frontmatter.title}</h1>
+          */}
         <div
           className="post-content"
           dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}>
         </div>
-
       </PostWrapper>
+
       <Gitalk options={gitalkConfig}/>
 
     </Layout>
@@ -96,7 +97,6 @@ export const query = graphql`
         frontmatter {
           title
           subtitle
-          coverImage
         }
         }
       }
