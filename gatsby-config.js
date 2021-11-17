@@ -22,7 +22,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-gitalk`,
-      options: gitalkConfig 
+      options: gitalkConfig
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -48,7 +48,38 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: [],
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
+        ],
       },
     },
   ],
