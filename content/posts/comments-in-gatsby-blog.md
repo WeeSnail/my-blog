@@ -10,21 +10,21 @@ author: Anes Marzooki
 
 After setting up this blog, I wanted to spice it up by adding comment functionality.
 
-Having a commenting feature on a blog is a great options for the readers to
-interact with the author and give feedbacks.
+Having a commenting feature on a blog is a great option for the readers to
+interact with the author and give feedback.
 
 Searching for the topic, I came across many options for adding comments to a blog site.
 
-Now, my blog is powered by Gatsby, so naturally I looked at the
+Now, my blog is powered by Gatsby, so naturally, I looked at the
 [documentation](https://www.gatsbyjs.com/docs/how-to/adding-common-features/adding-comments/)
 on adding comments.
 
-From the list suggested by the Gatsby's team, two options caught my eye:
+From the list suggested by Gatsby's team, two options caught my eye:
 
 - [Gitalk](https://gitalk.github.io/)
 - and [Utterances](https://utteranc.es/)
 
-The two options are Ads-free, Open source and lightweight, and that's right up my alley.
+The two options are Ads-free, Open source ,and lightweight, and that's right up my alley.
 
 I wanted something free and easy to maintain so I went with **Gitalk**: a comment component based on GitHub issues.
 
