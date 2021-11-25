@@ -84,27 +84,27 @@ const About = () => {
 
         <h2 style={{display: 'list-item'}}>About the blog</h2>
 
-        <p>This is the place where I'll be writing about my journey striding
+        <p>The author thinks of it as a place where he'll be writing about his journey striding
           through the woods of web development, served from the perspective
           of a self-taught developer <span>&#128104;&#8205;&#127859;</span>
           along with a healthy dose of some tips and notes about VIM, Linux, UI topics and
           God knows what (<em>books reviews? cooking recipes?
             rants?</em>&nbsp;&nbsp;<span>&#129300;</span> prolly!).</p>
 
-        <p>I'm still learning about much of the stuff, and I found out that the
+        <p>The author is still learning about much of the stuff, and he found out that the
           best way to better understand something is to talk or write about it,
-          so the majority of my posts will be more like a personal inner talk than
+          so the majority of his posts will be more like a personal inner talk than
           guides or tutorials :)</p>
 
-        <h2 style={{display: 'list-item'}}>Who am I?</h2>
+        <h2 style={{display: 'list-item'}}>Who's behind this?</h2>
 
-        <p><span>&#128075;</span>Hi, my name is Anes, I'm a Front-End Developer from Tunisia with a keen
-          interest in graphics, designs, UI, and animations.
+        <p>His name is Anes, a Front-End Developer from Tunisia with a keen
+          interest in graphics, designs, UI, dry humor ,and animations.
         </p>
 
         <br />
 
-        <p>A blundering user of Linux, tiling window managers, and VIM. I'm
+        <p>A blundering user of Linux, tiling window managers, and VIM, he's
           always on the hunt for the best development workflow.</p>
 
         <h2 style={{display: 'list-item'}}>How was this blog built?</h2>

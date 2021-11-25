@@ -9,6 +9,11 @@ import '@suziwen/gitalk/dist/gitalk.css';
 
 const PostWrapper = styled.article`
   .post-content {
+    max-width: 52ch;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 1.1em;
+
     table {
       border: 1px solid #ddd;
       border-collapse: collapse;
@@ -16,7 +21,10 @@ const PostWrapper = styled.article`
     }
 
     p {
-      margin: 15px 0;
+      margin: 1.25em 0;
+    }
+    code {
+      font-size: 0.8em;
     }
 
     h1, h2, h3, h4, h5, h6 {
