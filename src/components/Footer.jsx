@@ -22,9 +22,9 @@ const Copyright = () => {
 
   return (
     <footer>
-      {'Copyright © '}
-      <a color="inherit" href={data.site.siteMetadata.siteUrl}>
-        Your Website
+          {'Copyright © '}
+          <a color="inherit" href={data.site.siteMetadata.siteUrl}>
+          Blog
       </a>{' '}
       {new Date().getFullYear()}
       {'.'}
