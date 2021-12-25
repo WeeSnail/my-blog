@@ -24,8 +24,6 @@ exports.createPages = async function ({actions, page, graphql}) {
     }
   `)
 
-  console.log(result);
-
   const {postsRemark} = result.data;
 
   // Pagination.
