@@ -67,9 +67,9 @@ const IndexPage = ({data}) => {
       <Main className="">
         <PostListing posts={data.allMarkdownRemark.nodes} />
         { /* Read more section: goes to paginated page */}
-          <Button className="read-more">
-            <Link to="/posts">
-              Read More
+        <Button className="read-more">
+          <Link to="/posts">
+              Browse All
             </Link>
           </Button>
       </Main>
@@ -80,7 +80,7 @@ const IndexPage = ({data}) => {
 
 export const querty = graphql`
 query IndexQuery {
-  allMarkdownRemark(limit: 2, sort: {order: DESC, fields: frontmatter___date}) {
+  allMarkdownRemark(limit: 4, sort: {order: DESC, fields: frontmatter___date}) {
     nodes {
       id
       frontmatter {

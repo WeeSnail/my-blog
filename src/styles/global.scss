@@ -289,3 +289,13 @@ font-family: 'Space Grotesk', sans-serif;
     }
   }
 }
+
+.gatsby-highlight {
+  .number {
+    font-size: 1em;
+    background-color: unset;
+    min-width: auto;
+    padding: 0;
+    margin: 0;
+  }
+}

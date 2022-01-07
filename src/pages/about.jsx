@@ -84,32 +84,28 @@ const About = () => {
 
         <h2 style={{display: 'list-item'}}>About the blog</h2>
 
-        <p>The author thinks of it as a place where he'll be writing about his journey striding
-          through the woods of web development, served from the perspective
-          of a self-taught developer <span>&#128104;&#8205;&#127859;</span>
-          along with a healthy dose of some tips and notes about VIM, Linux, UI topics and
-          God knows what (<em>books reviews? cooking recipes?
-            rants?</em>&nbsp;&nbsp;<span>&#129300;</span> prolly!).</p>
+      <p>The writings are to be served from my own perspective(a self-taught blundering front-end developer 🐱).</p>
 
-        <p>The author is still learning about much of the stuff, and he found out that the
-          best way to better understand something is to talk or write about it,
-          so the majority of his posts will be more like a personal inner talk than
+        <p>I'm  still learning about much of the stuff, so the majority of my
+          articles are going to be more like a personal inner talk rather than
           guides or tutorials :)</p>
 
-        <h2 style={{display: 'list-item'}}>Who's behind this?</h2>
-
-        <p>His name is Anes, a Front-End Developer from Tunisia with a keen
-          interest in graphics, designs, UI, dry humor ,and animations.
-        </p>
+        <p>If you have any question please feel free to contact me or leave a comment ;)</p>
 
         <br />
 
-        <p>A blundering user of Linux, tiling window managers, and VIM, he's
-          always on the hunt for the best development workflow.</p>
-
         <h2 style={{display: 'list-item'}}>How was this blog built?</h2>
-        <p>The blog's initial bootstrap was done using a combination of <a href="https://github.com/gatsbyjs/gatsby-starter-minimal" target="_blank" rel="noreferrer">Gatsby's minimal starter</a> and <a href="https://github.com/jgthms/bulma" target="_blank" rel="noreferrer">Bulma</a>. It also features the use of <a href="https://github.com/styled-components/styled-components" target="_blank" rel="noreferrer">styled-components</a>, <a href="https://github.com/css-modules/css-modules" target="_blank" rel="noreferrer">CSS Modules</a>, SEO, RSS feeds, theming, PWA support and more.</p>
-        <p>Again, the main purpose is to experiment with different plugins, UI elements, colors, etcetera. You can find the <a href="https://github.com/WeeSnail/my-blog" target="_blank" rel="noreferrer">code base</a> on Github.</p>
+        <p>The blog's initial bootstrap was done using a combination of <a
+          href="https://github.com/gatsbyjs/gatsby-starter-minimal"
+          target="_blank" rel="noreferrer">Gatsby's minimal starter</a> and <a
+            href="https://github.com/jgthms/bulma" target="_blank"
+            rel="noreferrer">Bulma</a>. It also features the use of <a
+            href="https://github.com/styled-components/styled-components"
+            target="_blank" rel="noreferrer">styled-components</a>, <a
+            href="https://github.com/css-modules/css-modules" target="_blank"
+            rel="noreferrer">CSS Modules</a>, SEO, RSS feeds, theming, PWA
+          support and more.</p>
+        <p>The main purpose is to experiment with different plugins, UI elements, colors, etcetera. You can find the code base on my <a href="https://github.com/WeeSnail/my-blog" target="_blank" rel="noreferrer">Github.</a></p>
 
       </Main>
     </Layout>

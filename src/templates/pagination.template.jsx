@@ -39,7 +39,6 @@ const Pagination = ({pageContext, data}) => {
 
   return (
     <Layout>
-
       <Main>
         <PostListing posts={nodes} />
         <Span>
@@ -56,7 +55,6 @@ const Pagination = ({pageContext, data}) => {
             className="pagination-btn next">Next</Link>
         </Span>
       </Main>
-
     </Layout>
   )
 };

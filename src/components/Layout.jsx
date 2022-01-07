@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 const Layout = ({children}) => {
     return (
-      <div className="container mgh-medium">
+      <div className="container mgh-medium layout">
         <Blogheader />
         {children}
         <Footer />
