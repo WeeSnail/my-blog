@@ -8,9 +8,14 @@ import Gitalk from 'gatsby-plugin-gitalk';
 import '@suziwen/gitalk/dist/gitalk.css';
 
 const PostWrapper = styled.article`
-  .post-content {
     max-width: 52ch;
     margin: 0 auto;
+  .post-title {
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: align;
+  }
+  .post-content {
     line-height: 1.7;
     font-size: 1.1em;
 
@@ -66,10 +71,13 @@ const PostWrapper = styled.article`
 `;
 
 const PostTemplate = ({data, pageContext}) => {
+
   const {frontmatter} = data.markdownRemark;
+
   let gitalkConfig = {
     title: data.markdownRemark.frontmatter.title
-  }
+  };
+
   return (
     <Layout>
       <Seo
@@ -83,16 +91,15 @@ const PostTemplate = ({data, pageContext}) => {
           <FontAwesomeIcon className="arrow-icon" icon="long-arrow-alt-left" />
           back to home
         </Link>
-        {/*
-          <h1>{data.markdownRemark.frontmatter.title}</h1>
-          */}
+        <h1 className="post-title">{data.markdownRemark.frontmatter.title}</h1>
+        <hr />
         <div
           className="post-content"
           dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}>
         </div>
       </PostWrapper>
 
-      <Gitalk options={gitalkConfig}/>
+      <Gitalk options={gitalkConfig} />
 
     </Layout>
   )

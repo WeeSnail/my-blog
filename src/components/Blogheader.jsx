@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import ToggleMode from './ThemeToggle';
-import Logo from './Logo';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import ToggleMode from './ThemeToggle';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import * as hamburgerStyles from './Blogheader.module.scss';
 import {useTheme} from './ThemeProvider';
+import Logo from './Logo';
 
 const Header = styled.header`
   display: flex;

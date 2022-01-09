@@ -32,6 +32,7 @@ module.exports = {
       resolve: `gatsby-plugin-feed`,
       options: rssOptions
     },
+    `gatsby-plugin-sharp`,
     { // File sourcing
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -48,6 +49,12 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            }
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

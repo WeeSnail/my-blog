@@ -67,6 +67,7 @@ exports.createPages = async function ({actions, page, graphql}) {
       },
     });
   });
+
 };
 /*""""""""""""""""""""""""""""""""""""""""""""""""
 END pageCreating.
