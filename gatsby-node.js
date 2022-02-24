@@ -27,7 +27,7 @@ exports.createPages = async function ({actions, page, graphql}) {
   const {postsRemark} = result.data;
 
   // Pagination.
-  const paginationItems = 2;
+  const paginationItems = 4;
   const numberOfPages = Math.ceil(postsRemark.nodes.length / paginationItems);
 
   Array.from({length: numberOfPages}).forEach((_, i) => {
