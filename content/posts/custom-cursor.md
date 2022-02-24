@@ -4,7 +4,7 @@ subtitle: Setting up a custom cursor in a react.
 date: 2022-01-02
 slug: custom-cursor-part-1
 author: Anes Marzooki
-tags: [""]
+tags: ['']
 ---
 
 The trend of custom cursor in personal websites is still going, and having a
@@ -33,8 +33,8 @@ triggers the movement of the cursor element by changing the `x` and `y` values.
 
 ```javascript
 window.onmosuemove = (e) => {
-  cursor.style.left = `${e.pageX}px`
-  cursor.style.top = `${e.pageY}px`
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
 };
 ```
 
@@ -46,8 +46,9 @@ between`pageX/Y` and `clientX/Y`.
 ![clienXvsPageX](./clientx_pagex.png)
 
 In layman's term:
-* `pageX/Y` returns coordinates relatively to the `<html>` element.
-* `clientX/y` returns coordinates relatively to the viewport.
+
+- `pageX/Y` returns coordinates relatively to the `<html>` element.
+- `clientX/y` returns coordinates relatively to the viewport.
 
 Check this [stackoverflow](https://stackoverflow.com/questions/6073505/what-is-the-difference-between-screenx-y-clientx-y-and-pagex-y) thread.
 
@@ -59,6 +60,4 @@ that gives us an awesome implementation of the custom cursor anywhere we want.
 
 See you on the other side.
 
-[demo](/demos/demo1)
-
-
+<!-- [demo](/demos/demo1) -->

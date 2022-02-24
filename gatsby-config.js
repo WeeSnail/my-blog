@@ -11,7 +11,7 @@ module.exports = {
     title: "Anes's Blog",
     description: 'Technical Blog',
     body: {
-      content: 'Very exceptional!!!'
+      content: 'Personal blog'
     },
     siteUrl: process.env.BASE_URL,
   },

@@ -19,8 +19,9 @@
   --accent-light-bg: #97306a;
 }
 
-html, body {
-font-family: 'Space Grotesk', sans-serif;
+html,
+body {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .container {
@@ -29,28 +30,7 @@ font-family: 'Space Grotesk', sans-serif;
   height: 100vh !important;
 }
 
-@media screen and(min-width: 796px) {
-  .container {
-    margin: 5vh auto;
-    // max-width: 80vw;
-  }
-}
-
-@media screen and (min-width: 1408px) {
-  .container:not(.is-max-desktop):not(.is-max-widescreen) {
-    // max-width: 80vw;
-    margin: 5vh auto;
-  }
-}
-
-@media screen and(max-width: 796px) {
-  .container {
-    margin: 20px;
-  }
-}
-
 .main-wrapper {
-
   .arrow-icon {
     margin-right: 0.7rem;
     transform: scale(1.3);
@@ -63,8 +43,8 @@ font-family: 'Space Grotesk', sans-serif;
     a {
       color: var(--accent-light-bg);
     }
-    .header .header_left, .header__menu .menu__link {
-      // color: var(--font-light-bg);
+    .header .header_left,
+    .header__menu .menu__link {
       color: inherit;
     }
     .menu__link::after {
@@ -78,25 +58,22 @@ font-family: 'Space Grotesk', sans-serif;
         fill: var(--font-light-bg);
       }
     }
-
-    .title, .subtitle, .content, .post-title {
-      // color: var(--font-light-bg);
+    .title,
+    .subtitle,
+    .content,
+    .post-title {
       color: inherit;
     }
-
-      /*Read more button*/
+    /*Read more button*/
     .read-more {
       border-color: var(--box-border);
       border-radius: none;
-      // &:hover {
-      //   background-color: transparent;
-      // }
       a {
         color: var(--font-light-bg);
       }
     }
 
-       /*Pagination section*/
+    /*Pagination section*/
     .pagination-btn {
       border: 1px solid var(--box-border);
       cursor: pointer;
@@ -159,7 +136,8 @@ font-family: 'Space Grotesk', sans-serif;
       color: var(--font-dark-bg);
     }
     .header {
-      .header_left, .header__menu .menu__link {
+      .header_left,
+      .header__menu .menu__link {
         color: inherit;
       }
       .menu__link::after {
@@ -181,16 +159,18 @@ font-family: 'Space Grotesk', sans-serif;
         color: #444;
       }
     }
-    .title, .subtitle, .content, .post-title {
-      // color: #d8d8d8;
+    .title,
+    .subtitle,
+    .content,
+    .post-title {
       color: inherit;
     }
     .card-content {
       background-color: #232129;
       transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
       .card-body-wrapper {
-          background-color: #232129;
-          transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
+        background-color: #232129;
+        transition: color 0s ease-out 0s, background 0.2s ease-out 0s;
       }
     }
 
@@ -203,7 +183,7 @@ font-family: 'Space Grotesk', sans-serif;
       }
     }
 
-     /*Pagination section*/
+    /*Pagination section*/
     .pagination-btn {
       border: 1px solid var(--box-border);
       cursor: pointer;
@@ -265,27 +245,23 @@ font-family: 'Space Grotesk', sans-serif;
   }
 }
 
-.light-dark-toggle.react-toggle{
-  // &.react-toggle--uncheched:hover {
-  //     &:not(.react-toggle--disabled) .react-toggle-track {
-  //         background-color: #000000;
-  //     }
-  // }
+.light-dark-toggle.react-toggle {
   .react-toggle-track {
     background-color: #000000;
     border-radius: 0;
     &:hover {
-        background-color: #000000;
+      background-color: #000000;
     }
-    &-x, &-check {
-        right: 8px;
-        width: 15px;
+    &-x,
+    &-check {
+      right: 8px;
+      width: 15px;
+      height: 100%;
+      line-height: inherit;
+      svg {
+        width: 100%;
         height: 100%;
-        line-height: inherit;
-        svg {
-            width: 100%;
-            height: 100%;
-        }
+      }
     }
   }
 }
@@ -297,5 +273,25 @@ font-family: 'Space Grotesk', sans-serif;
     min-width: auto;
     padding: 0;
     margin: 0;
+  }
+}
+
+@media screen and(min-width: 796px) {
+  .container {
+    margin: 5vh auto;
+    // max-width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1408px) {
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+    // max-width: 80vw;
+    margin: 5vh auto;
+  }
+}
+
+@media screen and(max-width: 796px) {
+  .container {
+    margin: 20px;
   }
 }

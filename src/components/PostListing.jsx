@@ -14,8 +14,10 @@ const Card = styled.div`
   }
   div {
     h2 {
-      // font-family: 'Recursive';
       font-weight: 400;
+      @media (max-width: 480px) {
+        font-size: 5vw;
+      }
     }
   }
 `;

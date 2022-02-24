@@ -16,12 +16,11 @@ library.add(faSun, faMoon, faBars, faTimes, faLongArrowAltLeft);
 
 
 const MainWrapper = ({children}) => {
+
   const {theme} = useTheme();
+
   return (
     <React.Fragment>
-      {/*
-        <Canvas />
-        */}
       <div style={{height: `100vh`}} className={`main-wrapper ${theme.type}`}>
         {children}
       </div>
@@ -50,7 +49,9 @@ const MainWrapper = ({children}) => {
 const RootLayout = ({children}) => {
   return (
     <ThemeProvider>
+
       <MainWrapper>{children}</MainWrapper>
+
     </ThemeProvider>
   )
 };
