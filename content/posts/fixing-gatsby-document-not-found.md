@@ -41,7 +41,7 @@ Or we can use an if condition to check whether we have a `document` or not.
 
 ```javascript
 const isReady = typeof document !== 'undefined';
-if (isBrowser) {
+if (isReady) {
   /* Do something cool with document */
 }
 ```
