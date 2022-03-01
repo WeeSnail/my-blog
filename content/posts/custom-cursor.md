@@ -28,8 +28,9 @@ coordinates get updated to follow the mouse's position.
 It can be an **SVG**, an **image**, a styled **div**...anything really, that
 doesn't matter right now.
 
-The idea is to have an eventListener attach to the document or the window that
-triggers the movement of the cursor element by changing the `x` and `y` values.
+The idea is to have an **eventListener** attached to the document or the
+window, that listens for the mouse movement and updates the position of the
+cursor element by changing its `x` and `y` values.
 
 ```javascript
 window.onmosuemove = (e) => {
@@ -38,7 +39,7 @@ window.onmosuemove = (e) => {
 };
 ```
 
-That the idea, but before we continue we need to understand the difference
+That's the idea, but before we continue we need to understand the difference
 between`pageX/Y` and `clientX/Y`.
 
 ## pageX and clientX

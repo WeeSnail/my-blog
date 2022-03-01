@@ -13,7 +13,7 @@ operating system.
 
 A desktop environment (DE) is a bundle of different graphical components (such
 as toolbar, desktop widgets, icons, etc) and utilities that are presented to
-the use instead of the archaic command line interface to interact with the system.
+the user instead of the archaic command line interface to interact with the system.
 
 Gnome, KDE, Cinnamon are some of the most popular desktop environment on Linux.
 

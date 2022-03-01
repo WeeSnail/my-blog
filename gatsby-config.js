@@ -14,6 +14,7 @@ module.exports = {
       content: 'Personal blog'
     },
     siteUrl: process.env.BASE_URL,
+    image: "./src/images/icon.png"
   },
   plugins: [
     `gatsby-plugin-sass`,
