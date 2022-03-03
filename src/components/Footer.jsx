@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, graphql, useStaticQuery} from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
 const FixedFooter = styled.footer`
@@ -9,28 +9,16 @@ const FixedFooter = styled.footer`
 `;
 
 const Copyright = () => {
-
-  const data = useStaticQuery(graphql`
-        query{
-            site {
-                siteMetadata {
-                    siteUrl
-                }
-            }
-        }
-    `);
-
   return (
     <footer>
-          {'Copyright © '}
-          <a color="inherit" href={data.site.siteMetadata.siteUrl}>
-          Blog
+      {'Copyright © '}
+      <a color="inherit" href="https://www.anesmarzuki.com">
+        anes marzuki
       </a>{' '}
       {new Date().getFullYear()}
       {'.'}
     </footer>
   );
-
 };
 
 const Footer = () => {
@@ -40,13 +28,14 @@ const Footer = () => {
         <nav className="level">
           <div className="level-item has-text-centered">
             <Copyright />
-            <Link to="/rss.xml" target="_blank">RSS</Link>
+            <Link to="/rss.xml" target="_blank">
+              RSS
+            </Link>
           </div>
         </nav>
       </div>
     </FixedFooter>
-  )
+  );
 };
-
 
 export default Footer;
